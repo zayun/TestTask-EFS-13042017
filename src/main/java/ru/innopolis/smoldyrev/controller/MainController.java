@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import ru.innopolis.smoldyrev.exceptions.PeopleServiceException;
 import ru.innopolis.smoldyrev.pojo.Man;
 import ru.innopolis.smoldyrev.service.IPeopleService;
 
@@ -34,7 +35,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String showListPage(Model model) {
+    public String showListPage(Model model) throws Exception {
+
         List<Man> peoples = peopleService.getAll();
 
         if (peoples.size() > 0) {
@@ -49,7 +51,7 @@ public class MainController {
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String showInfoPage(Model model,
-                               @RequestParam int id) {
+                               @RequestParam int id) throws PeopleServiceException {
         Man man = peopleService.getById(id);
         model.addAttribute("man", man);
         return "info";
