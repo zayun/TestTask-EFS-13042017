@@ -14,9 +14,6 @@ import ru.innopolis.smoldyrev.service.IPeopleService;
 
 import java.util.List;
 
-/**
- * Created by smoldyrev on 12.04.17.
- */
 @Controller
 public class MainController {
 

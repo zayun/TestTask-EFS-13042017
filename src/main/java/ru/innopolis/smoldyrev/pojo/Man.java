@@ -2,9 +2,6 @@ package ru.innopolis.smoldyrev.pojo;
 
 import java.util.Date;
 
-/**
- * Created by smoldyrev on 12.04.17.
- */
 public class Man {
 
     private Integer number;

@@ -15,7 +15,6 @@ import java.util.List;
  * Created by smoldyrev on 12.04.17.
  */
 @Repository
-@Scope("prototype")
 public class PeopleDAO implements IPeopleDAO {
 
     private static Logger logger = Logger.getLogger(PeopleDAO.class);
